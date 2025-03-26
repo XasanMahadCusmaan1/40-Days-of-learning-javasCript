@@ -204,7 +204,7 @@ console.log(color === "red" ? "STOP" : "GO");
 
 let units = 5;
 let eachUnitPermonth = units * 150 * 30;
-let discountAnualPayment = eachUnitPermonth * 12 * 0.8;
+let discountAnualPayment = eachUnitPermonth * 12 * 0.2;
 console.log(discountAnualPayment + "₹ anual per year");
 
 // TASK 6 :  Leap Year Checker

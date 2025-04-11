@@ -939,4 +939,483 @@ console.log(fillMango);
 // using join method.
 
 let converToString = [1, 3, "Hi"];
-console.log(typeof converToString.join(' '))
+console.log(typeof converToString.join(" "));
+
+// NB - Consider these input arrays for question T-21 to T-48
+
+// employees array: An array of emplyees working in a department.
+
+const employees = [
+  {
+    id: 1,
+    name: "Alice",
+    departmentId: 1,
+    salary: 5000,
+    skills: ["Product Management", "Critical Thingin", "Excel"],
+    projects: ["Project A", "Project B", "Project C"],
+  },
+  {
+    id: 2,
+    name: "Bob",
+    departmentId: 2,
+    salary: 7000,
+    skills: ["DevOps", "Ui & Ux Designer"],
+    projects: ["Project A", "Project B", "Project C"],
+  },
+  {
+    id: 3,
+    name: "Charlie",
+    departmentId: 3,
+    salary: 4500,
+    skills: ["Networking", "Graphic Designer", "SEO"],
+    projects: ["Project A", "Project B", "Project C"],
+  },
+  {
+    id: 4,
+    name: "Diana",
+    departmentId: 1,
+    salary: 5500,
+    skills: ["Marketing"],
+    projects: ["Project A", "Project B", "Project C"],
+  },
+  {
+    id: 5,
+    name: "Edward",
+    departmentId: 2,
+    salary: 8000,
+    skills: ["Problem Solving", "Agile Methodology", "Leadeship"],
+    projects: ["Project A", "Project B", "Project C"],
+  },
+  {
+    id: 6,
+    name: "Fiona",
+    departmentId: 4,
+    salary: 6000,
+    skills: ["Html", "Css", "JavasCript"],
+    projects: ["Project A", "Project B", "Project C"],
+  },
+  {
+    id: 7,
+    name: "George",
+    departmentId: 3,
+    salary: 5200,
+    skills: ["Content Writing"],
+    projects: ["Project A", "Project B", "Project C", "Project B"],
+  },
+  {
+    id: 8,
+    name: "Helen",
+    departmentId: 4,
+    salary: 7200,
+    skills: ["Cybersecurity", "Comunication", "Web developer"],
+    projects: ["Project A", "Project B", "Project C"],
+  },
+  {
+    id: 9,
+    name: "Ian",
+    departmentId: 2,
+    salary: 4800,
+    skills: ["Data anlysis", "Critical thinging", "Power point", "Exel"],
+    projects: ["Project A", "Project B", "Project B", "Project C"],
+  },
+  {
+    id: 10,
+    name: "Jane",
+    departmentId: 1,
+    salary: 5100,
+    skills: ["Public speaking"],
+    projects: ["Project A", "Project B", "Project C", "Project A", "Project D"],
+  },
+];
+
+// departments array: An array of departments where emplyees work.
+const departments = [
+  { id: 1, name: "HR" },
+  { id: 2, name: "Engineering" },
+  { id: 3, name: "Marketing" },
+  { id: 4, name: "Sales" },
+];
+
+// 21-  T-021: Can you filter employees
+// who work in the "Engineering" department?
+
+const engDepartments = employees.filter((engDepId) => {
+  if (engDepId.departmentId === 2) {
+    return engDepId;
+  }
+});
+
+console.log("Employee who work enginering departments : ", engDepartments);
+
+// 22-  T-022: Create a new array that combines employee names and
+// department names in the format: "Alice (HR)".
+
+let combineEmDep = employees.map((employers) => {
+  let department = departments.find((dep) => dep.id === employers.departmentId);
+  return `${employers.name} (${department.name})`;
+});
+console.log(combineEmDep);
+
+// 23- T-023: Find the highest salary among employees.
+
+let highestSalary = employees
+  .map((employers) => employers.salary)
+  .reduce((acc, maxEmpSalary) => Math.max(acc, maxEmpSalary), 0);
+console.log(highestSalary);
+
+// 24- T-024: Check if there is at least one employee
+// in the "Sales" department.
+
+let findEmpSales = employees.some((employer) => {
+  return employer.departmentId === 4;
+});
+
+console.log(findEmpSales);
+
+// 25- T-025: Write a function to filter employees earning more than 6000.
+
+let filterEmp = employees.filter((emp) => emp.salary > 6000);
+console.log(filterEmp);
+
+// 26- T-026: Create an array of employee names only.
+
+let empNames = employees.map((employers) => employers.name);
+console.log("Employees names are : ", empNames);
+
+// 27- T-027: Calculate the total salary of all employees using
+
+let totalEmpSalary = employees.reduce((acc, emp) => acc + emp.salary, 0);
+console.log("The total employees salary is : ", totalEmpSalary);
+
+// 28- T-028: Is there any employee earning less than 5000?
+
+let empErningLess5000 = employees.some((emp) => emp.salary < 5000);
+console.log(empErningLess5000);
+
+// 29- T-029: Find the first employee who earns exactly 5100.
+
+let getEmp5100 = employees.find((emp) => emp.salary === 5100);
+console.log(getEmp5100);
+
+// 30- T-030: Find the last employee in the "HR" department.
+
+let lastEmpHrDepartment = employees.findLast((emp) => emp.departmentId === 1);
+console.log(lastEmpHrDepartment);
+
+// 31- T-031: Find the first employee in the "Marketing" department.
+
+let firstEmpMarDeparment = employees.find((emp) => emp.departmentId === 3);
+console.log(firstEmpMarDeparment);
+
+// 32- T-032: Check if all employees earn more than 4000.
+
+let ifAllEmpMoreThan4000 = employees.every((emp) => emp.salary > 4000);
+console.log(ifAllEmpMoreThan4000);
+
+// 33- T-033: Find the first employee in the "HR" department.
+
+let firstEmpHrDepartment = employees.find((emp) => emp.departmentId === 1);
+console.log(firstEmpHrDepartment);
+
+// 34- T-034: Verify if all employees belong to a department listed
+// in the departments array.
+
+let checkAllEmpDepartment = employees.every((emp) => {
+  let department = departments.find((dep) => dep.id === emp.departmentId);
+  return department;
+});
+console.log(checkAllEmpDepartment);
+
+// 35- T-035: Log each employee's name and department name to the console.
+
+employees.forEach((employers) => {
+  let department = departments.find((dep) => dep.id === employers.departmentId);
+  console.log(`${employers.name} ${department.name}`);
+});
+
+// 36- T-036: Extract all employee names into a single array.
+
+let allEmpNames = employees.map((emp) => emp.name);
+console.log(allEmpNames);
+
+// 37- T-037: Increment each employee's salary by 10%
+
+let incrementSalary10 = employees.map((emp) => Math.floor(emp.salary * 1.1));
+console.log(incrementSalary10);
+
+// 38-  T-038: Assume each employee can have multiple skills.
+// Create an array of employee skills and flatten them.
+// Example: [{name: "Alice", skills: ["Excel", "Management"]}, ...].
+
+let flattenArray = employees.flatMap((emp) => emp.skills);
+console.log(flattenArray);
+console.log(employees);
+
+// 39- T-039: Find the total salary of all employees
+// working in the "Engineering" department.
+
+let EngTotalSalary = employees
+  .filter((emp) => emp.departmentId === 2)
+  .map((emp) => emp.salary)
+  .reduce((sum, salary) => sum + salary, 0);
+console.log(EngTotalSalary);
+
+// 40- T-040: Check if there is any department where all employees
+// earn more than 5000.
+
+let groupbyDep = Object.groupBy(employees, ({ departmentId }) => departmentId);
+
+let checkEmpMoreThan5000 = Object.values(groupbyDep).some((depEmp) => {
+  return depEmp.every((emp) => emp.salary > 5000);
+});
+
+console.log(checkEmpMoreThan5000);
+
+// 41- T-041: Assume each employee has a projects array
+// (e.g., { id: 1, name: "Alice", projects: ["Project A", "Project B"] }).
+// Find the total number of unique projects being handled across all employees.
+
+let getProjects = employees.flatMap((emp) => emp.projects);
+let getUnique = [...new Set(getProjects)];
+console.log(getUnique.length);
+console.log(getProjects);
+
+// 42- T-042: For each employee, find their department name
+// and return an array of employee names with their department names.
+
+let empDepNames = employees.map((emp) => {
+  let department = departments.find((dep) => dep.id === emp.departmentId);
+  return `${emp.name} ${department.name}`;
+});
+
+console.log(empDepNames);
+
+// 43- T-043: Get a list of names of employees earning more than 6000.
+
+let getEmpMoreThan6000 = employees
+  .filter((emp) => emp.salary > 6000)
+  .map((emp) => emp.name);
+console.log(getEmpMoreThan6000);
+
+// 44- T-044: Write a for-of loop to print the names of
+// all employees from the employees array.
+
+for (let names of employees) {
+  console.log(names.name);
+}
+
+// 45-  T-045: Using a for-of loop, print the names of employees
+// earning more than 5000.
+
+for (let names of employees) {
+  if (names.salary > 5000) {
+    console.log(names.name);
+  }
+}
+
+// 46- T-046: Modify the for-of loop to destructure each employee
+// object and log their name and salary.
+
+for (let { name, salary } of employees) {
+  console.log(name, salary);
+}
+
+// 47- T-047: Write a for-of loop to match employees with their
+// departments and print the results.
+
+for (let emp of employees) {
+  let department = departments.find((dep) => dep.id === emp.departmentId);
+  console.log(emp.name, department.name);
+}
+
+// 48-  T-048: Use Array.prototype.entries() with a for-of loop
+// to print the index and name of each employee.
+
+for (let [index, value] of employees.entries()) {
+  console.log(index, value.name);
+}
+
+// 49 - T -049: Given the array - like object below, access the second element and log it:
+const arrayLike = { 0: "First", 1: "Second", length: 2 };
+let convertToArr = Array.from(arrayLike);
+console.log(convertToArr[1]);
+
+// 50- T-050: Write a function that takes a variable number of arguments and converts
+// the arguments object into a real array using Array.from.
+
+function takeMoreArg() {
+  console.log(Array.from(arguments));
+}
+takeMoreArg(1, 2, 3, 4, 5);
+
+// 51- T-051: Write a snippet to select all div elements on a webpage
+// (using document.querySelectorAll) and convert the resulting NodeList into an array
+
+let getAllDiv = document.querySelectorAll("div");
+convertNodeToArr = [...getAllDiv];
+console.log(convertNodeToArr);
+
+// 52- T-052: Merge these two arrays into a single array:
+const array1 = [1, 2];
+const array2 = [3, 4];
+
+let merge = [...array1, ...array2];
+console.log(merge);
+
+// 53- T-053: Create an array of n duplicate values using Array.from.
+// Input: Create an array with 5 "A" values. Output: ["A", "A", "A", "A", "A"]
+
+let arrNumbers = [1, 2, 3, 4, 5];
+let arrNumbersCopy = Array.from({ length: 5 }, () => "A");
+console.log(arrNumbersCopy);
+
+// 54- T-054: Use Array.from to convert a string like "Hello" into an array of characters.
+
+let helloString = "hello";
+let convertArrayString = Array.from(helloString);
+console.log(convertArrayString);
+
+// 55- T-055: For the array, ['apple', 'banana', 'apricot', 'mango', 'blueberry'],
+// group words by their first letter using group().
+
+let arrFirstLetter = ["apple", "banana", "apricot", "mango", "blueberry"];
+let groupFirstLetter = Object.groupBy(arrFirstLetter, (word) => word[0]);
+console.log(groupFirstLetter);
+
+// 56-  T-056: From this array [3, 7, 3, 2, 3, 8, 7, 7],
+// find the most repeated number. Hint: Use array method.
+
+const thisArray = [3, 7, 3, 2, 3, 8, 7, 7];
+const counts = thisArray.reduce((acc, num) => {
+  if (acc.hasOwnProperty(num)) {
+    acc[num]++;
+  } else {
+    acc[num] = 1;
+  }
+  return acc;
+}, {});
+
+console.log(counts);
+let maxCount = 0;
+let mostRepeated;
+for (const num in counts) {
+  if (counts[num] > maxCount) {
+    maxCount = counts[num];
+    mostRepeated = parseInt(num);
+  }
+}
+
+console.log("Most Repeated Number is : ", mostRepeated);
+
+// 57- T-057: Find the median of [5, 2, 9, 1, 3, 6, 8].
+let mediumData = [3, 7, 3, 2, 3, 8, 7, 7];
+
+function getMedium(numbers) {
+  let sortData = [...numbers].sort((a, b) => a - b);
+  getMiddleNum = Math.floor(sortData.length / 2);
+
+  if (sortData.length % 2 === 1) {
+    return sortData[getMiddleNum];
+  } else {
+    return (sortData[getMiddleNum - 1] + sortData[getMiddleNum]) / 2;
+  }
+}
+console.log(getMedium(mediumData));
+
+// 58- T-058: Convert this array [['a', 1], ['b', 2], ['c', 3]],
+// into { a: 1, b: 2, c: 3 } using array method(s).
+
+let arrays = [
+  ["a", 1],
+  ["b", 2],
+  ["c", 3],
+];
+let converToObject = Object.fromEntries(arrays);
+console.log(converToObject);
+
+// 59-  T-059: Flatten and convert all letters to uppercase in one step using flatMap().
+// Here is input array: [['a', 'b'], ['c', 'd']].
+
+let array = [
+  ["a", "b"],
+  ["c", "d"],
+];
+
+let convertToUppercase = array.flatMap((arr) =>
+  arr.map((letter) => letter.toUpperCase())
+);
+console.log(convertToUppercase);
+
+// 60- T-060: Count the occurrences of each fruit in this array:
+// ['apple', 'banana', 'apple', 'mango', 'banana', 'banana']
+
+let occurrence = ["apple", "banana", "apple", "mango", "banana", "banana"];
+let emptyObject = {};
+
+let getOccurrence = occurrence.forEach((fruit) => {
+  if (emptyObject.hasOwnProperty(fruit)) {
+    emptyObject[fruit]++;
+  } else {
+    emptyObject[fruit] = 1;
+  }
+});
+
+console.log(emptyObject);
+
+// 61- T-061: Extract extract [‘b’, ‘c’, ‘d’] using slice() from this array:
+// ['a', 'b', 'c', 'd', 'e']
+
+let alphArray = ["a", "b", "c", "d", "e"];
+let extractLast3Numb = alphArray.slice(1, 4);
+console.log(extractLast3Numb);
+
+// 62- T-062: Sort the array [9, 3, 1, 6, 8] in ascending order using toSorted()
+
+let needsSort = [9, 3, 1, 6, 8];
+console.log(needsSort.toSorted((a, b) => (a === b ? 0 : a > b ? 1 : -1)));
+
+// 63- T-063: Reverse [1, 2, 3, 4, 5] using toReversed()
+// and compare it with reverse()
+
+let needReverse = [1, 2, 3, 4, 5];
+console.log(needReverse.toReversed()); // doesnt mutate the orginal
+console.log(needReverse.reverse()); // but reverse does
+console.log(needReverse);
+
+// 64- T-064: Group the follwing array elements based on
+// age(Adult vs Non-Adult):
+
+const users = [
+  { name: "Alice", age: 55 },
+  { name: "Bob", age: 3 },
+  { name: "Charlie", age: 25 },
+];
+
+let adultNonGroup = Object.groupBy(users, (age) => {
+  return age.age >= 18 ? "Adult" : "Non Adult";
+});
+
+console.log("Adult Group and non Adult : ", adultNonGroup);
+
+// 65- T-065: Find the longest word in this sentence using Array and
+// Array methods:"40 Days of JavaScript by tapaScript
+// is a powerful initiative".
+
+function findLongestWord(sentence) {
+  let splitByWords = sentence.split(" ");
+  let getLongestWord = splitByWords.reduce((longestWord, currentWord) => {
+    return currentWord.length > longestWord.length ? currentWord : longestWord;
+  }, " ");
+  console.log(getLongestWord);
+}
+
+findLongestWord("40 Days of JavaScript by tapaScript is a powerful initiative");
+
+// 66- T-066: Find common elements between two arrays,
+// [1, 2, 3, 4], [3, 4, 5, 6]
+
+let firstArray = [1, 2, 3, 4];
+let secondArray = [3, 4, 5, 6];
+
+let getCommonElement = firstArray.filter((el) => secondArray.includes(el));
+console.log(getCommonElement);

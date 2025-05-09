@@ -23,6 +23,3 @@ Here is the video for you to go through and learn:
 
 [![day-21](./banner.png)](https://youtu.be/hTDeyBq5EdM "Video")
 
-## **👩‍💻 🧑‍💻 Assignment Project**
-
-Please check the project assignment in the [Task File](../project-assignment/recipe-finder.md).

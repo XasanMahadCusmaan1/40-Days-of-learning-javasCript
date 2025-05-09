@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@layer base {
+
+    *,
+    *::before,
+    *::after {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+}
+
+@layer utilities {
+    .quiz_options {
+        width: 100%;
+        margin-block-start: 15px;
+    }
+
+    .quiz_options button {
+        font-size: 24px;
+        background-color: #00c950;
+        width: 100%;
+        padding: 8px 10px;
+        text-align: left;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .quiz_options button:hover {
+        background-color: #7bf1a8;
+    }
+
+    .quiz_options button.correct {
+        background-color: #00a63e;
+        color: white;
+    }
+
+    .quiz_options button.wrong {
+        background-color: #e7000b;
+        color: white;
+    }
+
+    .quiz_result {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+        justify-content: center;
+        margin-block-start: 10px;
+    }
+
+    .quiz_result span {
+        font-size: 22px;
+        text-align: center;
+        color: blue;
+    }
+
+    .quiz_result button {
+        background-color: rgb(170, 252, 170);
+        padding: 5px 10px;
+        border: 2px solid blue;
+        cursor: pointer;
+        font-size: 22px;
+        border-radius: 5px;
+    }
+}

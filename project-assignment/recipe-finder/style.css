@@ -1,0 +1,97 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    interpolate-size: allow-keywords;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    align-content: start;
+    justify-content: center;
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+    margin-block-end: 10px;
+}
+
+.recipe {
+    min-width: 600px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.recipe_header {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+}
+
+.recipe_header #clearBtn {
+    font-size: 22px;
+    padding: 5px 25px;
+    cursor: pointer;
+    border: 1.5px solid black;
+    border-radius: 5px;
+    background: none;
+    color: rgb(248, 93, 93);
+}
+
+.recipe input {
+    width: 100%;
+    padding: 10px 10px;
+    font-size: 20px;
+    border: 1.5px solid black;
+    border-radius: 5px;
+}
+
+.recipe input:focus {
+    outline: none;
+    border: 1.5px solid rgb(248, 93, 93);
+}
+
+#recipe_list {
+    align-self: flex-start;
+    margin-block: 10px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+details {
+    margin-block-start: 10px;
+    border: 1.5px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    overflow: hidden;
+}
+
+details::details-content {
+    font-style: italic;
+    line-height: 1.4;
+    font-size: 18px;
+    block-size: 0;
+    transition: block-size .5s, content-visibility .5s, opacity .5s;
+    transition-behavior: allow-discrete;
+}
+
+details[open]::details-content {
+    block-size: auto;
+}
+
+summary {
+    font-size: 22px;
+    cursor: pointer;
+    font-weight: bold;
+    padding-block-end: 5px;
+    color: rgb(248, 93, 93);
+}

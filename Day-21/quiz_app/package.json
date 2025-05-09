@@ -1,0 +1,15 @@
+{
+  "name": "quiz_app",
+  "version": "1.0.0",
+  "description": "Quiz App",
+  "main": "script.js",
+  "scripts": {
+    "build:css": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "author": "Hassan Mahad Cusmaan",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.5",
+    "tailwindcss": "^4.1.5"
+  }
+}

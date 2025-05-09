@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <script defer src="./script.js"></script>
+    <link rel="stylesheet" href="./dist/output.css">
+</head>
+
+<body class="grid place-content-center h-screen p-4 ">
+    <div
+        class="quiz_container bg-green-400 p-5 rounded-sm flex items-center justify-center flex-col shadow-lg min-w-lg ">
+        <div class="quiz_timer text-4xl mb-4 text-blue-700">⌚15s</div>
+        <h2 class="quiz_question text-3xl font-semibold self-start">Loading....</h2>
+        <div class="quiz_options flex flex-col gap-3 items-center justify-center"></div>
+        <button type="button" id="btn"
+            class="bg-green-300 py-2 px-3 text-2xl shadow-sm shadow-green-500 rounded-sm mt-6 cursor-pointer  border-2 border-blue-500">Next
+            Question</button>
+        <div class="quiz_result"></div>
+    </div>
+</body>
+
+</html>

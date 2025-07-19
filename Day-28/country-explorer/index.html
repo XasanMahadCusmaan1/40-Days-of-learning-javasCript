@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Country Project</title>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script defer src="./script.js"></script>
+
+</head>
+
+<body>
+    <div class="country_explorer">
+        <h1>Country Project</h1>
+        <div id="country_header">
+            <!-- Input -->
+            <input type="text" name="country_header--input" id="country_header--input" placeholder="Enter Country" />
+            <button id="country_header--btn" type="button">Search</button>
+        </div>
+        <div id="error" class="hidden"></div>
+        <div id="loading" class="hidden"></div>
+        <div id="country_info--container"></div>
+        <div id="map"></div>
+    </div>
+</body>
+
+</html>

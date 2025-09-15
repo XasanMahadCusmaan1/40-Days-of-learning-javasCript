@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library System</title>
+    <link rel="stylesheet" href="./dist/output.css">
+    <script type="module" src="./js/main.js"></script>
+</head>
+
+<body class="p-4 bg-green-50">
+    <main class="w-screen max-w-10/12 m-auto">
+        <h1 class="text-center text-4xl">📚Library Management System</h1>
+        <!-- header section  -->
+        <section id="userView" class="my-4">
+            <label for="userViewSelection" class="text-2xl font-medium">Choose View :</label>
+            <select id="userViewSelection" class="text-lg outline-2 outline-black rounded-sm p-1 w-full">
+                <option value="member">Member View</option>
+                <option value="admin">Admin View</option>
+            </select>
+        </section>
+
+        <!-- add new book section  -->
+        <section id="newBook" class="bg-emerald-50 p-6 rounded-sm shadow-sm">
+            <form id="bookForm">
+                <h2 class="text-2xl mb-1 font-semibold">Add New Book</h2>
+                <div class="title my-2">
+                    <label for="bookTitle">Title</label>
+                    <input type="text" class="border-2 text-md p-1 border-green-700 w-full rounded-sm outline-none"
+                        id="bookTitle" required>
+                </div>
+                <div class="author my-2">
+                    <label for="bookAuthor">Author</label>
+                    <input type="text" class=" border-2 text-md p-1 border-green-700 w-full rounded-sm outline-none"
+                        id="bookAuthor" required>
+                </div>
+                <div class="genre my-2">
+                    <label for="bookGenre">Genre</label>
+                    <input type="text" class="border-2 text-md p-1 border-green-700 w-full rounded-sm outline-none "
+                        id="bookGenre" required>
+                </div>
+                <button type="submit" id="submitBtn"
+                    class="my-2 bg-emerald-600 text-white p-2 cursor-pointer text-xl rounded-sm">Add
+                    Book</button>
+            </form>
+        </section>
+
+        <!-- availible books  -->
+        <section id="availibleBooksSection" class="bg-emerald-50 p-6 rounded-sm shadow-sm my-4">
+            <h2 class="text-2xl mb-1 font-semibold">Available Books</h2>
+            <ul id="avBooks"></ul>
+        </section>
+
+        <!-- Barowed books  -->
+        <section id="barowedBooksSection" class="bg-emerald-50 p-6 rounded-sm shadow-sm my-4">
+            <h2 class="text-2xl mb-1 font-semibold">Barowed Books</h2>
+            <ul id="baBooks"></ul>
+        </section>
+    </main>
+</body>
+
+</html>

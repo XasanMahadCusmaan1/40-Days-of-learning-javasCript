@@ -10,31 +10,50 @@ body {
     place-content: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     padding: 10px;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
 }
 
-.quiz_container {
-    width: 700px;
-    padding: 10px;
+main {
+    width: 100%;
+    min-width: 700px;
+    max-height: 500px;
+    padding: 20px;
     border-radius: 5px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+
 }
 
-.quiz_container--questions {
-    /* padding: 10px; */
+main h1 {
+    text-align: center;
+}
 
-    & h3 {
-        margin-block: 15px;
-    }
+#questionText {
+    margin-block: 15px;
+}
 
-    & button {
-        display: block;
-        width: 100%;
-        text-align: left;
-        margin-block: 5px;
-        padding: 5px;
-        background-color: antiquewhite;
-        font-size: 18px;
-        border: none;
-        cursor: pointer;
+#options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#options button {
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+
+    &:hover {
+        background-color: #e9ecef;
+        border-color: #c0c0c0;
     }
 }
 
@@ -45,9 +64,19 @@ body {
     margin-block: 20px;
 
     & .btn {
-        font-size: 20px;
-        padding: 3px 20px;
+        padding: 12px 25px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 1.1rem;
         cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:disabled{
+            background-color: #cccccc;
+                cursor: not-allowed;
+        }
     }
 }
 
@@ -59,10 +88,18 @@ body {
     display: initial;
 }
 
-.correct {
-    color : green;
+#options button.correct {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
 }
 
-.wrong{
-    color: red;
+#options button.wrong {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
 }
+
+/* #progress,#score{
+    font-size: 1.1rem;
+} */

@@ -1,10 +1,9 @@
 import { questions } from "./question.js";
 import { Quiz } from "./quizLogic.js";
-import { QuizUI } from "./ui.js";
+import { QuizUi } from "./ui.js";
 
-// Orchestrator: wires logic with UI
 const quiz = new Quiz(questions);
-const ui = new QuizUI(document.body);
+const ui = new QuizUi();
 
 function renderCurrent() {
   const q = quiz.getCurrentQuestion();
@@ -13,28 +12,27 @@ function renderCurrent() {
 
   ui.renderQuestion(q, (selectedIndex) => {
     const result = quiz.selectAnswer(selectedIndex);
-    ui.markAnswer(result);
+    ui.markAnswers(result);
   });
 }
 
-// Next button
+// Next Button
 ui.onNext(() => {
   if (quiz.hasNext()) {
-    quiz.gotoNext();
+    quiz.goNext();
     renderCurrent();
   } else {
-    // Show final summary
     ui.showFinal(quiz.score, quiz.total);
   }
 });
 
-// Restart button
+// Restart Button
+
 ui.onRestart(() => {
   quiz.reset();
   ui.reset();
   renderCurrent();
 });
 
-// initial render
+// Initial
 renderCurrent();
-
